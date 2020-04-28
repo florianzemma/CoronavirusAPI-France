@@ -9,9 +9,9 @@ API permettant de récupérer les données sur le Coronavirus en France actualis
 
 ##### NOTE : The data are actualised at 8pm everyday if you request data for today before 8pm you'll get the data for the previous date but don't worry this is handling automatically by the API ;).
 
-EX: Si vous faites cette requete 28/04/2020 avant 20h l'api vous fournira les données du 27/04/2020
+**EX:** Si vous faites cette requete le 28/04/2020 avant 20h l'API vous fournira les données du 27/04/2020.
 
-EX: If you request /FranceLiveGlobalData at 28/04/2020 before 8pm the api will give you the data for the 27/04/2020.
+**EX:** If you request /FranceLiveGlobalData at 28/04/2020 before 8pm the api will give you the data for the 27/04/2020.
 
 **Résulats/Results :** 
 ```javascript
@@ -57,7 +57,7 @@ EX: If you request /FranceLiveGlobalData at 28/04/2020 before 8pm the api will g
 
 **GET** "https://coronavirus-apifr.now.sh/LiveDataByDepartement?Departement={departement}"
 
-EX: https://coronavirus-apifr.now.sh/LiveDataByDepartement?Departement=Rhône
+**EX:** "https://coronavirus-apifr.now.sh/LiveDataByDepartement?Departement=Rhône"
 
 [Liste des départements](https://www.regions-et-departements.fr/departements-francais)
 
@@ -65,9 +65,9 @@ EX: https://coronavirus-apifr.now.sh/LiveDataByDepartement?Departement=Rhône
 
 ##### NOTE : The data are actualised at 8pm everyday if you request data for today before 8pm you'll get the data for the previous date but don't worry this is handling automatically by the API ;).
 
-EX: Si vous faites cette requete 28/04/2020 avant 20h l'api vous fournira les données du 27/04/2020.
+**EX:** Si vous faites cette requete le 28/04/2020 avant 20h l'api vous fournira les données du 27/04/2020.
 
-EX: If you request /FranceLiveGlobalData at 28/04/2020 before 8pm the api will give you the data for the 27/04/2020.
+**EX:** If you request /FranceLiveGlobalData at 28/04/2020 before 8pm the api will give you the data for the 27/04/2020.
 
 **Résultats/Résults :**
 ```javascript
@@ -141,7 +141,7 @@ Today : 28/04/2020 11am.
 ```
 
 
-## GET Toutes les données disponibles peu importe la date ou le département //To GET all data by any date , any departement.
+## GET Toutes les données disponibles peu importe la date ou le département //To GET all the data by any date , any departement.
 
 **GET** "https://coronavirus-apifr.now.sh/AllData"
 
@@ -175,7 +175,7 @@ Today : 28/04/2020 11am.
 ```
 
 
-## GET Toute les données disponibles pour une date précise // GET all at a choosen date.
+## GET Toute les données disponibles pour une date précise // GET all the data at a choosen date.
 
 **GET** "https://coronavirus-apifr.now.sh/AllDataByDate?date={date}"
 
@@ -236,7 +236,7 @@ EX: 2020-04-19
 
 **GET** "https://coronavirus-apifr.now.sh/AllDataByDepartement?Departement={departement}"
 
-EX: **GET** "https://coronavirus-apifr.now.sh/AllDataByDepartement?Departement=Rhône"
+**EX:** **GET** "https://coronavirus-apifr.now.sh/AllDataByDepartement?Departement=Rhône"
 
 [Liste des départements](https://www.regions-et-departements.fr/departements-francais)
 
