@@ -1,5 +1,5 @@
 # CoronavirusAPI-France
-API permettant de récupérer les données sur le Coronavirus en France actualisées chaque jours a 20H pour chaque département et en global via de simple requetes GET qui enverront une réponse en JSON.
+API permettant de récupérer et d'exploiter les données sur le Coronavirus en France actualisées chaque jours a 20H pour chaque département et en global via de simple requetes GET qui enverront une réponse en JSON.
 
 ## GET Les données globales connues a l'heure actuelle pour la France / GET the global data knows at the actual hour for France
 
