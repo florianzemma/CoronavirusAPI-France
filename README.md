@@ -70,7 +70,7 @@ EX: Si vous faites cette requete 28/04/2020 avant 20h l'api vous fournira les do
 EX: If you request /FranceLiveGlobalData at 28/04/2020 before 8pm the api will give you the data for the 27/04/2020.
 
 **Résultats/Résults :**
-
+```javascript
 {
     "LiveDataByDepartement": [
         {
@@ -88,9 +88,7 @@ EX: If you request /FranceLiveGlobalData at 28/04/2020 before 8pm the api will g
         }
     ]
 }
-
-
-.
+```
 
 
 ## GET Toutes les données connues à l'heure actuelles peu importe le département // GET all live data for any departement.
