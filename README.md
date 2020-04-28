@@ -181,11 +181,11 @@ Today : 28/04/2020 11am.
 
 Le format de la date doit etre 2020-mm-dd.// Date format have to be 2020-mm-dd.
 
-EX: 2020-04-19
+**EX**: 2020-04-19
 
 **GET** "https://coronavirus-apifr.now.sh/AllDataByDate?date=2020-04-19"
 
-**Résultats/Results : **
+**Résultats/Results :**
 ```javascript
 {
     "allFranceDataByDate": [
