@@ -274,4 +274,9 @@ Le format de la date doit etre 2020-mm-dd.// Date format have to be 2020-mm-dd.
 ......
 ```
 
+### Le jeu de données Initiale provient de l'initiative OpenCOVID19-fr ###
+[Le lien](https://www.data.gouv.fr/fr/organizations/opencovid19-fr/#datasets)
 
+### Réalisation ###
+[Florian Zemma Gailleton](linkedin.com/in/florian-zemma-gailleton-607031121)
+[Site Web](https://www.dev-enir.fr)
