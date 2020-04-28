@@ -13,7 +13,7 @@ EX: Si vous faites cette requete 28/04/2020 avant 20h l'api vous fournira les do
 
 EX: If you request /FranceLiveGlobalData at 28/04/2020 before 8pm the api will give you the data for the 27/04/2020.
 
-Résulats/Résults : 
+**Résulats/Résults :** 
 ```javascript
 {
     "FranceGlobalLiveData": [
@@ -65,10 +65,11 @@ EX: https://coronavirus-apifr.now.sh/LiveDataByDepartement?Departement=Rhône
 ###### NOTE : The data are actualised at 8pm everyday if you request data for today before 8pm you'll get the data for the previous date
 ###### but don't worry this is handling automatically by the API ;).
 
-EX: Si vous faites cette requete 28/04/2020 avant 20h l'api vous fournira les données du 27/04/2020
+EX: Si vous faites cette requete 28/04/2020 avant 20h l'api vous fournira les données du 27/04/2020.
+
 EX: If you request /FranceLiveGlobalData at 28/04/2020 before 8pm the api will give you the data for the 27/04/2020.
 
-Résultats/Résults :
+**Résultats/Résults :**
 
 {
     "LiveDataByDepartement": [
@@ -94,19 +95,20 @@ Résultats/Résults :
 
 ## GET Toutes les données connues à l'heure actuelles peu importe le département // GET all live data for any departement.
 
-"https://coronavirus-apifr.now.sh/AllLiveData" 
+**GET** "https://coronavirus-apifr.now.sh/AllLiveData" 
 
 ###### REMARQUE : les données sont actualisées chaque jours aux alentours de 20h si vous requetez les données pour le jour meme avant 20h vous aurez les données du jour d'avant mais ne vous inquiétez pas tout ceci est automatiquement géré par l'API ;)
 
 ###### NOTE : The data are actualised at 8pm everyday if you request data for today before 8pm you'll get the data for the previous date but don't worry this is handling automatically by the API ;).
 
 EX: Si vous faites cette requete 28/04/2020 avant 20h l'api vous fournira les données du 27/04/2020.
+
 EX: If you request /AllLiveData at 28/04/2020 before 8pm the api will give you the data for the 27/04/2020.
 
 Aujourd'hui : 28/04/2020 11h.
 Today : 28/04/2020 11am.
 
-Résultats/Results:
+**Résultats/Results:**
 ```javascript
 {
     "allLiveFranceData": [
@@ -145,7 +147,7 @@ Résultats/Results:
 
 **GET** "https://coronavirus-apifr.now.sh/AllData"
 
-Résultats/Results :
+**Résultats/Results :**
 ```javascript
 {
     "allData": [
@@ -180,11 +182,12 @@ Résultats/Results :
 **GET** "https://coronavirus-apifr.now.sh/AllDataByDate?date={date}"
 
 Le format de la date doit etre 2020-mm-dd.// Date format have to be 2020-mm-dd.
-EX:2020-04-19
+
+EX: 2020-04-19
 
 **GET** "https://coronavirus-apifr.now.sh/AllDataByDate?date=2020-04-19"
 
-Résultats/Results : 
+**Résultats/Results : **
 ```javascript
 {
     "allFranceDataByDate": [
@@ -237,7 +240,7 @@ Résultats/Results :
 
 EX: **GET** "https://coronavirus-apifr.now.sh/AllDataByDepartement?Departement=Rhône"
 
-Résultats/Results :
+**Résultats/Results :**
 ```javascript
 {
     "allDataByDepartement": [
