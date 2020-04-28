@@ -7,12 +7,11 @@ API permettant de récupérer les données sur le Coronavirus en France actualis
 
 ###### REMARQUE : les données sont actualisées chaque jours aux alentours de 20h si vous requetez les données pour le jour meme avant 20h vous aurez les données du jour d'avant mais ne vous inquiétez pas tout ceci est automatiquement géré par l'API ;)
 
-###### NOTE : The data are actualised at 8pm everyday if you request data for today before 8pm you'll get the data for the previous date
-###### but don't worry this is handling automatically by the API ;).
+###### NOTE : The data are actualised at 8pm everyday if you request data for today before 8pm you'll get the data for the previous date but don't worry this is handling automatically by the API ;).
 
-exemple : Si vous faites cette requete 28/04/2020 avant 20h l'api vous fournira les données du 27/04/2020
+EX: Si vous faites cette requete 28/04/2020 avant 20h l'api vous fournira les données du 27/04/2020
 
-example : If you request /FranceLiveGlobalData at 28/04/2020 before 8pm the api will give you the data for the 27/04/2020.
+EX: If you request /FranceLiveGlobalData at 28/04/2020 before 8pm the api will give you the data for the 27/04/2020.
 
 Résulats/Résults : 
 ```javascript
@@ -58,7 +57,7 @@ Résulats/Résults :
 
 **GET** "https://coronavirus-apifr.now.sh/LiveDataByDepartement?Departement={departement}"
 
-ex: https://coronavirus-apifr.now.sh/LiveDataByDepartement?Departement=Rhône
+EX: https://coronavirus-apifr.now.sh/LiveDataByDepartement?Departement=Rhône
 
 ###### REMARQUE : les données sont actualisées chaque jours aux alentours de 20h si vous requetez les données 
 ###### pour le jour meme avant 20h vous aurez les données du jour d'avant mais ne vous inquiétez pas tout ceci est automatiquement géré par l'API ;)
@@ -66,8 +65,8 @@ ex: https://coronavirus-apifr.now.sh/LiveDataByDepartement?Departement=Rhône
 ###### NOTE : The data are actualised at 8pm everyday if you request data for today before 8pm you'll get the data for the previous date
 ###### but don't worry this is handling automatically by the API ;).
 
-exemple : Si vous faites cette requete 28/04/2020 avant 20h l'api vous fournira les données du 27/04/2020
-example : If you request /FranceLiveGlobalData at 28/04/2020 before 8pm the api will give you the data for the 27/04/2020.
+EX: Si vous faites cette requete 28/04/2020 avant 20h l'api vous fournira les données du 27/04/2020
+EX: If you request /FranceLiveGlobalData at 28/04/2020 before 8pm the api will give you the data for the 27/04/2020.
 
 Résultats/Résults :
 
@@ -97,17 +96,15 @@ Résultats/Résults :
 
 "https://coronavirus-apifr.now.sh/AllLiveData" 
 
-###### REMARQUE : les données sont actualisées chaque jours aux alentours de 20h si vous requetez les données 
-###### pour le jour meme avant 20h vous aurez les données du jour d'avant mais ne vous inquiétez pas tout ceci est automatiquement géré par l'API ;)
+###### REMARQUE : les données sont actualisées chaque jours aux alentours de 20h si vous requetez les données pour le jour meme avant 20h vous aurez les données du jour d'avant mais ne vous inquiétez pas tout ceci est automatiquement géré par l'API ;)
 
-###### NOTE : The data are actualised at 8pm everyday if you request data for today before 8pm you'll get the data for the previous date
-###### but don't worry this is handling automatically by the API ;).
+###### NOTE : The data are actualised at 8pm everyday if you request data for today before 8pm you'll get the data for the previous date but don't worry this is handling automatically by the API ;).
 
-exemple : Si vous faites cette requete 28/04/2020 avant 20h l'api vous fournira les données du 27/04/2020
-example : If you request /AllLiveData at 28/04/2020 before 8pm the api will give you the data for the 27/04/2020.
+EX: Si vous faites cette requete 28/04/2020 avant 20h l'api vous fournira les données du 27/04/2020.
+EX: If you request /AllLiveData at 28/04/2020 before 8pm the api will give you the data for the 27/04/2020.
 
-Aujourd'hui : 28/04/2020 11h
-Today : 28/04/2020 11am
+Aujourd'hui : 28/04/2020 11h.
+Today : 28/04/2020 11am.
 
 Résultats/Results:
 ```javascript
@@ -183,8 +180,7 @@ Résultats/Results :
 **GET** "https://coronavirus-apifr.now.sh/AllDataByDate?date={date}"
 
 Le format de la date doit etre 2020-mm-dd.// Date format have to be 2020-mm-dd.
-
-ex:2020-04-19
+EX:2020-04-19
 
 **GET** "https://coronavirus-apifr.now.sh/AllDataByDate?date=2020-04-19"
 
@@ -239,7 +235,7 @@ Résultats/Results :
 
 **GET** "https://coronavirus-apifr.now.sh/AllDataByDepartement?Departement={departement}"
 
-ex: **GET** "https://coronavirus-apifr.now.sh/AllDataByDepartement?Departement=Rhône"
+EX: **GET** "https://coronavirus-apifr.now.sh/AllDataByDepartement?Departement=Rhône"
 
 Résultats/Results :
 ```javascript
