@@ -1,0 +1,41 @@
+{
+    "version": 2,
+    "builds": [{ "src": "index.js", "use": "@now/node-server" }],
+    "routes": [
+      {
+        "src": "/AllData",
+        "dest": "/index.js",
+        "methods": ["GET"]
+      },
+      {
+        "src": "/AllDataByDate",
+        "dest": "/index.js",
+        "methods": ["GET"]
+      },
+      {
+        "src": "/AllLiveData",
+        "dest": "/index.js",
+        "methods": ["GET"]
+      },
+      {
+        "src": "/FranceLiveGlobalData",
+        "dest": "/index.js",
+        "methods": ["GET"]
+      },
+      {
+        "src": "/FranceGlobalDataByDate",
+        "dest": "/index.js",
+        "methods": ["GET"]
+      },
+      {
+        "src": "/LiveDataByDepartement",
+        "dest": "/index.js",
+        "methods": ["GET"]
+      },
+      {
+        "src": "/AllDataByDepartement",
+        "dest": "/index.js",
+        "methods": ["GET"]
+      }
+    ]
+}
