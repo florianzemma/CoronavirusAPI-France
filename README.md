@@ -5,8 +5,7 @@ API permettant de récupérer les données sur le Coronavirus en France actualis
 
 **GET** "https://coronavirus-apifr.now.sh/FranceLiveGlobalData" 
 
-###### REMARQUE : les données sont actualisées chaque jours aux alentours de 20h si vous requetez les données 
-###### pour le jour meme avant 20h vous aurez les données du jour d'avant mais ne vous inquiétez pas tout ceci est automatiquement géré par l'API ;)
+###### REMARQUE : les données sont actualisées chaque jours aux alentours de 20h si vous requetez les données pour le jour meme avant 20h vous aurez les données du jour d'avant mais ne vous inquiétez pas tout ceci est automatiquement géré par l'API ;)
 
 ###### NOTE : The data are actualised at 8pm everyday if you request data for today before 8pm you'll get the data for the previous date
 ###### but don't worry this is handling automatically by the API ;).
