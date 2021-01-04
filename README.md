@@ -139,42 +139,6 @@ Today : 28/04/2020 11am.
 ........... 121
 
 ```
-
-
-## GET Toutes les données disponibles peu importe la date ou le département //To GET all the data by any date , any departement.
-
-**GET** "https://coronavirusapi-france.now.sh/AllData"
-
-**Résultats/Results :**
-```javascript
-{
-    "allData": [
-        {
-            "date": "2020-01-24",
-            "source": {
-                "nom": "ARS Nouvelle-Aquitaine",
-                "url": "https://www.nouvelle-aquitaine.ars.sante.fr/communique-de-presse-coronavirus-point-de-situation-en-nouvelle-aquitaine-du-08032020"
-            },
-            "sourceType": "agences-regionales-sante",
-            "nom": "Charente",
-            "code": "DEP-16",
-            "casConfirmes": 0
-        },
-        {
-            "date": "2020-01-24",
-            "source": {
-                "nom": "ARS Nouvelle-Aquitaine",
-                "url": "https://www.nouvelle-aquitaine.ars.sante.fr/communique-de-presse-coronavirus-point-de-situation-en-nouvelle-aquitaine-du-08032020"
-            },
-            "sourceType": "agences-regionales-sante",
-            "nom": "Charente-Maritime",
-            "code": "DEP-17",
-            "casConfirmes": 0
-        },
-        ......8110
-```
-
-
 ## GET Toute les données disponibles pour une date précise // GET all the data at a choosen date.
 
 **GET** "https://coronavirusapi-france.now.sh/AllDataByDate?date={date}"
