@@ -243,4 +243,3 @@ Le format de la date doit etre 2020-mm-dd.// Date format have to be 2020-mm-dd.
 
 ### Réalisation ###
 [Florian Zemma Gailleton](https://www.linkedin.com/in/florian-zemma-gailleton-607031121) |
-[Site Web](https://www.dev-enir.fr)
