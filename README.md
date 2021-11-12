@@ -10,6 +10,9 @@ API permettant de récupérer et d'exploiter les données sur le Coronavirus en 
 ##### REMARQUE : les données sont actualisées chaque jours a minuit si l'API ne trouve pas les données pour le jour même elle vous fournira celle du jour d'avant 
 ##### NOTE : The data are updated at midnigth everyday, if the API doesn't have yet the data she will send you yesterday's data automatically.
 
+##### Le format de la date doit être au format français DD/MM/YYYY // Date format have to be the french format DD/MM/YYYY.
+**EXEMPLE**: 11-10-2021
+
 ## GET Les données globales connues a l'heure actuelle pour la France / GET the global data knows at the actual hour for France
 
 **GET** "https://coronavirusapifr.herokuapp.com/data/live/france" 
@@ -45,7 +48,7 @@ API permettant de récupérer et d'exploiter les données sur le Coronavirus en 
 
 ## GET Données globales pour la FRANCE pour une date précise // GET global data for FRANCE at a given date.
 
-**GET** "https://coronavirusapifr.herokuapp.com/data/france-by-date/:DATE"
+**ROUTE** "https://coronavirusapifr.herokuapp.com/data/france-by-date/:DATE"
 
 Le format de la date doit être au format français DD/MM/YYYY // Date format have to be the french format DD/MM/YYYY.
 
@@ -143,7 +146,7 @@ Le format de la date doit être au format français DD/MM/YYYY // Date format ha
 
 ## GET Les données connues à l'heure ACTUELLE pour un DÉPARTEMENT précis // Get the data knows at the moment for one DEPARTMENT.
 
-**GET** "https://coronavirusapifr.herokuapp.com/data/live/departement/:DEPARTEMENT"
+**ROUTE** "https://coronavirusapifr.herokuapp.com/data/live/departement/:DEPARTEMENT"
 
 **EXEMPLE:** "https://coronavirusapifr.herokuapp.com/data/live/departement/rhone"
 
@@ -181,9 +184,9 @@ Le format de la date doit être au format français DD/MM/YYYY // Date format ha
 
 ## GET Données détaillées par DÉPARTEMENTS pour une date précise // GET detailed data by DEPARTMENTS at a given date.
 
-**GET** "https://coronavirusapifr.herokuapp.com/data/departements-by-date/:DATE"
+**ROUTE** "https://coronavirusapifr.herokuapp.com/data/departements-by-date/:DATE"
 
-Le format de la date doit être au format français DD/MM/YYYY .// Date format have to be the french format DD/MM/YYYY.
+Le format de la date doit être au format français DD/MM/YYYY // Date format have to be the french format DD/MM/YYYY.
 
 **EXEMPLE**: 11-10-2021
 
@@ -245,9 +248,9 @@ Le format de la date doit être au format français DD/MM/YYYY .// Date format h
 
 ## GET Toutes les données disponibles pour un DÉPARTEMENT précis // GET all the data for one DEPARTMENT.
 
-**GET** "https://coronavirusapifr.herokuapp.com/data/departement/:DEPARTEMENT"
+**ROUTE** "https://coronavirusapifr.herokuapp.com/data/departement/:DEPARTEMENT"
 
-**EXEMPLE:** **GET** "https://coronavirusapifr.herokuapp.com/data/departement/rhone"
+**EXEMPLE:** "https://coronavirusapifr.herokuapp.com/data/departement/rhone"
 
 [Liste des départements](https://www.regions-et-departements.fr/departements-francais)
 
@@ -307,9 +310,9 @@ Le format de la date doit être au format français DD/MM/YYYY .// Date format h
 
 ## GET Toutes les données disponibles pour un DÉPARTEMENT précis a une DATE précise // GET all the data for one DEPARTMENT at a given DATE.
 
-**GET** "// https://coronavirusapifr.herokuapp.com/data/departement/:DEPARTEMENT/:DATE"
+**ROUTE** "https://coronavirusapifr.herokuapp.com/data/departement/:DEPARTEMENT/:DATE"
 
-**EXEMPLE:** **GET** "https://coronavirusapifr.herokuapp.com/data/departement/rhone/10-11-2021"
+**EXEMPLE:** "https://coronavirusapifr.herokuapp.com/data/departement/rhone/10-11-2021"
 
 [Liste des départements](https://www.regions-et-departements.fr/departements-francais)
 
@@ -345,9 +348,9 @@ Le format de la date doit être au format français DD/MM/YYYY .// Date format h
 
 ## GET Toutes les données disponibles pour une RÉGION précise // GET all the data for one REGION.
 
-**GET** "// https://coronavirusapifr.herokuapp.com/data/region/:REGION"
+**ROUTE** "// https://coronavirusapifr.herokuapp.com/data/region/:REGION"
 
-**EXEMPLE:** **GET** "https://coronavirusapifr.herokuapp.com/data/region/occitanie"
+**EXEMPLE:** "https://coronavirusapifr.herokuapp.com/data/region/occitanie"
 
 [Liste des départements](https://www.regions-et-departements.fr/departements-francais)
 
@@ -408,9 +411,9 @@ Le format de la date doit être au format français DD/MM/YYYY .// Date format h
 
 ## GET Toutes les données disponibles pour une RÉGION précis a une DATE précise // GET all the data for one REGION at a given DATE.
 
-**GET** "// https://coronavirusapifr.herokuapp.com/data/region/:REGION/:DATE"
+**ROUTE** "https://coronavirusapifr.herokuapp.com/data/region/:REGION/:DATE"
 
-**EXEMPLE:** **GET** "https://coronavirusapifr.herokuapp.com/data/region/occitanie/10-11-2021"
+**EXEMPLE:** "https://coronavirusapifr.herokuapp.com/data/region/occitanie/10-11-2021"
 
 [Liste des départements](https://www.regions-et-departements.fr/departements-francais)
 
