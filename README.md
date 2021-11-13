@@ -13,6 +13,32 @@ API permettant de récupérer et d'exploiter les données sur le Coronavirus en 
 ##### Le format de la date doit être au format français DD/MM/YYYY // Date format have to be the french format DD/MM/YYYY.
 **EXEMPLE**: 11-10-2021
 
+## Légende données ##: 
+**'date'** = Date
+**'dep'** = Département
+**'reg'** = Région
+**'lib_dep'** = libellé département
+**'lib_reg'** = libellé région
+**'hosp'** = Nombre de patients actuellement hospitalisés pour COVID-19.
+**'incid_hosp'** = Nombre de nouveaux patients hospitalisés au cours des dernières 24h.
+**'rea'** = Nombre de patients actuellement en réanimation ou en soins intensifs.
+**'incid_rea'** = Nombre de nouveaux patients admis en réanimation au cours des dernières 24h.
+**'rad'** = Nombre cumulé de patients ayant été hospitalisés pour COVID-19 et de retour à domicile en raison de l'amélioration de leur état de santé.
+**'incid_rad'** = Nouveaux retours à domicile au cours des dernières 24h.
+**'dchosp'** = Décès à l’hôpital
+**'incid_dchosp'** = Nouveaux patients décédés à l’hôpital au cours des dernières 24h.
+**'esms_dc'** = Décès en ESMS
+**'dc_tot'** = Cumul des décès (cumul des décès constatés à l'hôpital et en EMS)
+**'conf'** = Nombre de cas confirmés
+**'conf_j1'** = Nombre de nouveaux cas confirmés (J-1 date de résultats)
+**'pos'** = Nombre de personnes déclarées positives (J-3 date de prélèvement)
+**'pos_7j'** = Nombre de personnes déclarées positives sur une semaine (J-3 date de prélèvement)
+**'esms_cas'** = Cas confirmés en ESMS
+**'tx_pos'** = Taux de positivité des tests virologiques (Le taux de positivité correspond au nombre de personnes testées positives (RT-PCR et test antigénique) pour la première fois depuis plus de 60 jours rapporté au nombre total de personnes testées positives ou négatives sur une période donnée ; et qui n‘ont jamais été testées positive dans les 60 jours précédents.)
+**'tx_incid'** = Taux d'incidence (activité épidémique : Le taux d'incidence correspond au nombre de personnes testées positives (RT-PCR et test antigénique) pour la première fois depuis plus de 60 jours rapporté à la taille de la population. Il est exprimé pour 100 000 habitants)
+**'TO'** = Taux d'occupation : tension hospitalière sur la capacité en réanimation (Proportion de patients atteints de COVID-19 actuellement en réanimation, en soins intensifs, ou en unité de surveillance continue rapportée au total des lits en capacité initiale, c’est-à-dire avant d’augmenter les capacités de lits de réanimation dans un hôpital).
+**'R'** = Facteur de reproduction du virus (évolution du R0 : Le nombre de reproduction du virus : c’est le nombre moyen de personnes qu’une personne infectée peut contaminer. Si le R effectif est supérieur à 1, l’épidémie se développe ; s’il est inférieur à 1, l’épidémie régresse)
+
 ## GET Les données globales connues a l'heure actuelle pour la France / GET the global data knows at the actual hour for France
 
 **GET** "https://coronavirusapifr.herokuapp.com/data/live/france" 
