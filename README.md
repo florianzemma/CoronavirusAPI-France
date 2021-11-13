@@ -357,7 +357,7 @@ Le format de la date doit être au format français DD/MM/YYYY // Date format ha
   ....... ]
 ```
 
-## GET Toutes les données disponibles pour un DÉPARTEMENT précis a une DATE précise // GET all the data for one DEPARTMENT at a given DATE.
+## GET Les données disponibles pour un DÉPARTEMENT précis a une DATE précise // GET all the data for one DEPARTMENT at a given DATE.
 
 **ROUTE** "https://coronavirusapifr.herokuapp.com/data/departement/:DEPARTEMENT/:DATE"
 
@@ -395,13 +395,76 @@ Le format de la date doit être au format français DD/MM/YYYY // Date format ha
 ]
 ```
 
+## GET Les données connues a l'heure ACTUELLE pour une RÉGION précise // GET all the data for one REGION.
+
+**ROUTE** "// https://coronavirusapifr.herokuapp.com/data/live/region/:REGION"
+
+**EXEMPLE:** "https://coronavirusapifr.herokuapp.com/data/live/region/occitanie"
+
+[Liste des départements](https://www.regions-et-departements.fr/regions-francaises)
+
+**Résultats/Results :**
+```javascript
+[
+  {
+    "dep": 9,
+    "date": "2021-11-12",
+    "reg": 76,
+    "lib_dep": "Ariège",
+    "lib_reg": "Occitanie",
+    "tx_pos": null,
+    "tx_incid": null,
+    "TO": 0.19831223628692,
+    "R": null,
+    "hosp": 10,
+    "rea": 4,
+    "rad": 562,
+    "dchosp": 102,
+    "reg_rea": 94,
+    "incid_hosp": 3,
+    "incid_rea": 3,
+    "incid_rad": 2,
+    "incid_dchosp": 0,
+    "reg_incid_rea": 18,
+    "pos": null,
+    "pos_7j": null,
+    "cv_dose1": null
+  },
+  {
+    "dep": 11,
+    "date": "2021-11-12",
+    "reg": 76,
+    "lib_dep": "Aude",
+    "lib_reg": "Occitanie",
+    "tx_pos": null,
+    "tx_incid": null,
+    "TO": 0.19831223628692,
+    "R": null,
+    "hosp": 39,
+    "rea": 5,
+    "rad": 1537,
+    "dchosp": 413,
+    "reg_rea": 94,
+    "incid_hosp": 0,
+    "incid_rea": 0,
+    "incid_rad": 0,
+    "incid_dchosp": 0,
+    "reg_incid_rea": 18,
+    "pos": null,
+    "pos_7j": null,
+    "cv_dose1": null
+  },
+   ........
+]
+```
+
 ## GET Toutes les données disponibles pour une RÉGION précise // GET all the data for one REGION.
 
 **ROUTE** "// https://coronavirusapifr.herokuapp.com/data/region/:REGION"
 
 **EXEMPLE:** "https://coronavirusapifr.herokuapp.com/data/region/occitanie"
 
-[Liste des départements](https://www.regions-et-departements.fr/departements-francais)
+[Liste des régions](https://www.regions-et-departements.fr/regions-francaises)
 
 **Résultats/Results :**
 ```javascript
@@ -458,13 +521,13 @@ Le format de la date doit être au format français DD/MM/YYYY // Date format ha
 ]
 ```
 
-## GET Toutes les données disponibles pour une RÉGION précis a une DATE précise // GET all the data for one REGION at a given DATE.
+## GET Les données disponibles pour une RÉGION précise a une DATE précise // GET all the data for one REGION at a given DATE.
 
 **ROUTE** "https://coronavirusapifr.herokuapp.com/data/region/:REGION/:DATE"
 
 **EXEMPLE:** "https://coronavirusapifr.herokuapp.com/data/region/occitanie/10-11-2021"
 
-[Liste des départements](https://www.regions-et-departements.fr/departements-francais)
+[Liste des régions](https://www.regions-et-departements.fr/regions-francaises)
 
 **Résultats/Results :**
 ```javascript
