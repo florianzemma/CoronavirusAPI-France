@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-import { Injectable, Logger } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { Cron, CronExpression } from '@nestjs/schedule';
 import axios from 'axios';
 const fs = require('fs');
@@ -8,20 +8,16 @@ const Papa = require('papaparse');
 
 @Injectable()
 export class TaskService {
-  private readonly logger = new Logger(TaskService.name);
-
   @Cron(CronExpression.EVERY_DAY_AT_MIDNIGHT)
   handleCron() {
     const writeJsonFile = (data, fileName: string) => {
       const jsonContent: string = JSON.stringify(data);
       fs.writeFile(fileName, jsonContent, 'utf8', function (err) {
         if (err) {
-          this.logger.log(
-            'An error occured while writing JSON Object to File.',
-          );
+          console.log('An error occured while writing JSON Object to File.');
           return console.log(err);
         }
-        this.logger.log('JSON file has been saved.');
+        console.log('JSON file has been saved.');
       });
     };
     const getDataByDep = async () => {
