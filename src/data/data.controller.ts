@@ -61,4 +61,9 @@ export class DataController {
   ): CovidData[] | string {
     return this.dataService.getDataByRegionNameByDate(name, date);
   }
+
+  @Get('update')
+  updateData(): void {
+    return this.dataService.updateData();
+  }
 }

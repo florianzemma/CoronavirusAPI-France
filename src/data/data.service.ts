@@ -1,3 +1,4 @@
+import { TaskService } from './../task/task.service';
 import { CovidData } from './interface';
 /* eslint-disable @typescript-eslint/no-var-requires */
 import { Injectable } from '@nestjs/common';
@@ -9,6 +10,7 @@ const covidDataListDEP: CovidData[] = require('../../covidDataDep.json');
 
 @Injectable()
 export class DataService {
+  constructor(private taskService: TaskService) {}
   getLiveData(): CovidData[] | string {
     const yesterdayDate: string = format(startOfYesterday(), 'yyyy-MM-dd');
     const todayDate: string = format(new Date(), 'yyyy-MM-dd');
@@ -150,5 +152,9 @@ export class DataService {
         data.date === format(new Date(date), 'yyyy-dd-MM'),
     );
     return dataByRegion.length ? dataByRegion : 'No data found';
+  }
+
+  updateData(): void {
+    this.taskService.getCovidDataFromFile();
   }
 }
