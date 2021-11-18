@@ -13,16 +13,19 @@ export class DataService {
   constructor(private taskService: TaskService) {}
   getLiveData(): CovidData[] | string {
     const yesterdayDate: string = format(startOfYesterday(), 'yyyy-MM-dd');
+
     const todayDate: string = format(new Date(), 'yyyy-MM-dd');
     let yesterdayData: CovidData[] | null = null;
     const dataOfToday: CovidData[] = covidDataListFR.filter(
       (data: CovidData) => data.date === todayDate,
     );
+
     if (!dataOfToday.length) {
       yesterdayData = covidDataListFR.filter(
         (data: CovidData) => data.date === yesterdayDate,
       );
     }
+    console.log(yesterdayData);
     return dataOfToday.length
       ? dataOfToday
       : yesterdayData.length
@@ -37,11 +40,13 @@ export class DataService {
     const dataOfToday: CovidData[] = covidDataListDEP.filter(
       (data: CovidData) => data.date === todayDate,
     );
+
     if (!dataOfToday.length) {
       yesterdayData = covidDataListDEP.filter(
         (data: CovidData) => data.date === yesterdayDate,
       );
     }
+
     return dataOfToday.length
       ? dataOfToday
       : yesterdayData.length
