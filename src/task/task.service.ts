@@ -8,7 +8,7 @@ const Papa = require('papaparse');
 
 @Injectable()
 export class TaskService {
-  @Cron(CronExpression.EVERY_2_HOURS)
+  @Cron(CronExpression.EVERY_DAY_AT_MIDNIGHT)
   getCovidDataFromFile() {
     const writeJsonFile = (data, fileName: string) => {
       const jsonContent: string = JSON.stringify(data);

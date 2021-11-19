@@ -25,7 +25,6 @@ export class DataService {
         (data: CovidData) => data.date === yesterdayDate,
       );
     }
-    console.log(yesterdayData);
     return dataOfToday.length
       ? dataOfToday
       : yesterdayData.length
