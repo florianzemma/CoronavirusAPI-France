@@ -21,16 +21,4 @@ export class S3Service {
 
     return JSON.parse(data.Body.toString('utf-8')) as CovidData[];
   };
-
-  deleteFileS3 = async (
-    key: string,
-  ): Promise<PromiseResult<DeleteObjectOutput, AWSError>> => {
-    const s3 = new S3();
-    return await s3
-      .deleteObject({
-        Bucket: this.configService.get('AWS_BUCKET_NAME'),
-        Key: key,
-      })
-      .promise();
-  };
 }
