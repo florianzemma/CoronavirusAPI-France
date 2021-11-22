@@ -2,8 +2,12 @@
 import { ConfigService } from '@nestjs/config';
 import { Injectable } from '@nestjs/common';
 import { Cron, CronExpression } from '@nestjs/schedule';
-import { S3 } from 'aws-sdk';
 import axios from 'axios';
+import {
+  PutObjectCommand,
+  PutObjectCommandOutput,
+  S3Client,
+} from '@aws-sdk/client-s3';
 const { StringStream } = require('scramjet');
 const Papa = require('papaparse');
 
@@ -15,17 +19,21 @@ export class TaskService {
     const uploadFileS3 = async (
       data: string,
       filename: string,
-    ): Promise<void | S3.ManagedUpload.SendData> => {
-      const s3 = new S3();
+    ): Promise<PutObjectCommandOutput> => {
       const jsonContent: string = JSON.stringify(data);
-      return await s3
-        .upload({
-          Bucket: this.configService.get('AWS_BUCKET_NAME'),
-          Body: jsonContent,
-          Key: filename,
-        })
-        .promise()
-        .catch((e): void => console.log(e));
+      const s3client = new S3Client({
+        credentials: {
+          accessKeyId: this.configService.get('AWS_ACCESS_KEY_ID'),
+          secretAccessKey: this.configService.get('AWS_SECRET_ACCESS_KEY'),
+        },
+        region: this.configService.get('AWS_REGION'),
+      });
+      const bucketParams = {
+        Bucket: this.configService.get('AWS_BUCKET_NAME'),
+        Body: jsonContent,
+        Key: filename,
+      };
+      return await s3client.send(new PutObjectCommand(bucketParams));
     };
 
     const getDataByDep = async (): Promise<void> => {
