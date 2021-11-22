@@ -1,8 +1,6 @@
 import { ConfigService } from '@nestjs/config';
 import { Injectable } from '@nestjs/common';
-import { PromiseResult } from 'aws-sdk/lib/request';
-import { AWSError, S3 } from 'aws-sdk';
-import { DeleteObjectOutput } from 'aws-sdk/clients/s3';
+import { S3 } from 'aws-sdk';
 import { CovidData } from 'src/data/interface';
 
 @Injectable()
