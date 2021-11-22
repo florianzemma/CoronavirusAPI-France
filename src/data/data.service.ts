@@ -1,19 +1,19 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
+import { S3Service } from './../s3/s3.service';
 import { TaskService } from './../task/task.service';
 import { CovidData } from './interface';
-/* eslint-disable @typescript-eslint/no-var-requires */
 import { Injectable } from '@nestjs/common';
 import { format, startOfYesterday } from 'date-fns';
 import * as helper from '../helpers';
 
-const covidDataListFR: CovidData[] = require('../../covidDataFR.json');
-const covidDataListDEP: CovidData[] = require('../../covidDataDep.json');
-
 @Injectable()
 export class DataService {
-  constructor(private taskService: TaskService) {}
-  getLiveData(): CovidData[] | string {
+  constructor(private taskService: TaskService, private s3Service: S3Service) {}
+  async getLiveData(): Promise<CovidData[] | string> {
+    const covidDataListFR: CovidData[] = await this.s3Service.getFileS3(
+      'covidDataFR.json',
+    );
     const yesterdayDate: string = format(startOfYesterday(), 'yyyy-MM-dd');
-
     const todayDate: string = format(new Date(), 'yyyy-MM-dd');
     let yesterdayData: CovidData[] | null = null;
     const dataOfToday: CovidData[] = covidDataListFR.filter(
@@ -32,7 +32,10 @@ export class DataService {
       : 'No data found';
   }
 
-  getLiveDataForAllDepartement(): CovidData[] | string {
+  async getLiveDataForAllDepartement(): Promise<CovidData[] | string> {
+    const covidDataListDEP: CovidData[] = await this.s3Service.getFileS3(
+      'covidDataDep.json',
+    );
     const yesterdayDate: string = format(startOfYesterday(), 'yyyy-MM-dd');
     const todayDate: string = format(new Date(), 'yyyy-MM-dd');
     let yesterdayData: CovidData[] | null = null;
@@ -53,7 +56,12 @@ export class DataService {
       : 'No data found';
   }
 
-  getLiveDataByDepartementName(name: string): CovidData[] | string {
+  async getLiveDataByDepartementName(
+    name: string,
+  ): Promise<CovidData[] | string> {
+    const covidDataListDEP: CovidData[] = await this.s3Service.getFileS3(
+      'covidDataDep.json',
+    );
     const yesterdayDate: string = format(startOfYesterday(), 'yyyy-MM-dd');
     const todayDate: string = format(new Date(), 'yyyy-MM-dd');
     let yesterdayData: CovidData[] | null = null;
@@ -78,7 +86,10 @@ export class DataService {
       : 'No data found';
   }
 
-  getLiveDataByRegionName(name: string): CovidData[] | string {
+  async getLiveDataByRegionName(name: string): Promise<CovidData[] | string> {
+    const covidDataListDEP: CovidData[] = await this.s3Service.getFileS3(
+      'covidDataDep.json',
+    );
     const yesterdayDate: string = format(startOfYesterday(), 'yyyy-MM-dd');
     const todayDate: string = format(new Date(), 'yyyy-MM-dd');
     let yesterdayData: CovidData[] | null = null;
@@ -103,7 +114,10 @@ export class DataService {
       : 'No data found';
   }
 
-  getDataByDepartementName(name: string): CovidData[] | string {
+  async getDataByDepartementName(name: string): Promise<CovidData[] | string> {
+    const covidDataListDEP: CovidData[] = await this.s3Service.getFileS3(
+      'covidDataDep.json',
+    );
     const dataByDepepartment: CovidData[] = covidDataListDEP.filter(
       (data: CovidData) =>
         helper.removeAccentAndLowercase(data.lib_dep) ===
@@ -112,7 +126,10 @@ export class DataService {
     return dataByDepepartment.length ? dataByDepepartment : 'No data found';
   }
 
-  getDataByRegionName(name: string): CovidData[] | string {
+  async getDataByRegionName(name: string): Promise<CovidData[] | string> {
+    const covidDataListDEP: CovidData[] = await this.s3Service.getFileS3(
+      'covidDataDep.json',
+    );
     const dataByDepartement: CovidData[] = covidDataListDEP.filter(
       (data: CovidData) =>
         helper.removeAccentAndLowercase(data.lib_reg) ===
@@ -121,24 +138,33 @@ export class DataService {
     return dataByDepartement.length ? dataByDepartement : 'No data found';
   }
 
-  getDataDepartementByDate(date: string): CovidData[] | string {
+  async getDataDepartementByDate(date: string): Promise<CovidData[] | string> {
+    const covidDataListDEP: CovidData[] = await this.s3Service.getFileS3(
+      'covidDataDep.json',
+    );
     const dataByDate: CovidData[] = covidDataListDEP.filter(
       (data: CovidData) => data.date === format(new Date(date), 'yyyy-dd-MM'),
     );
     return dataByDate.length ? dataByDate : 'No data found';
   }
 
-  getDataFRByDate(date: string): CovidData[] | string {
+  async getDataFRByDate(date: string): Promise<CovidData[] | string> {
+    const covidDataListFR: CovidData[] = await this.s3Service.getFileS3(
+      'covidDataFR.json',
+    );
     const dataByDate: CovidData[] = covidDataListFR.filter(
       (data: CovidData) => data.date === format(new Date(date), 'yyyy-dd-MM'),
     );
     return dataByDate.length ? dataByDate : 'No data found';
   }
 
-  getDataByDepartementNameByDate(
+  async getDataByDepartementNameByDate(
     name: string,
     date: string,
-  ): CovidData[] | string {
+  ): Promise<CovidData[] | string> {
+    const covidDataListDEP: CovidData[] = await this.s3Service.getFileS3(
+      'covidDataDep.json',
+    );
     const dataByDepartment: CovidData[] = covidDataListDEP.filter(
       (data: CovidData) =>
         helper.removeAccentAndLowercase(data.lib_dep) ===
@@ -148,7 +174,13 @@ export class DataService {
     return dataByDepartment.length ? dataByDepartment : 'No data found';
   }
 
-  getDataByRegionNameByDate(name: string, date: string): CovidData[] | string {
+  async getDataByRegionNameByDate(
+    name: string,
+    date: string,
+  ): Promise<CovidData[] | string> {
+    const covidDataListDEP: CovidData[] = await this.s3Service.getFileS3(
+      'covidDataDep.json',
+    );
     const dataByRegion: CovidData[] = covidDataListDEP.filter(
       (data: CovidData) =>
         helper.removeAccentAndLowercase(data.lib_reg) ===
