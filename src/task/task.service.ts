@@ -14,7 +14,7 @@ const Papa = require('papaparse');
 @Injectable()
 export class TaskService {
   constructor(private configService: ConfigService) {}
-  @Cron(CronExpression.EVERY_3_HOURS)
+  @Cron(CronExpression.EVERY_DAY_AT_MIDNIGHT)
   getCovidDataFromFile(): void {
     const uploadFileS3 = async (
       data: string,
