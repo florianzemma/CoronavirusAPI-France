@@ -1,13 +1,13 @@
 import { ConfigService } from '@nestjs/config';
 import { Injectable } from '@nestjs/common';
-import { CovidData } from 'src/data/interface';
+import { CovidDataDep, CovidDataFr } from 'src/data/interface';
 import { GetObjectCommand, S3Client } from '@aws-sdk/client-s3';
 
 @Injectable()
 export class S3Service {
   constructor(private configService: ConfigService) {}
 
-  getFileS3 = async (key: string): Promise<CovidData[]> => {
+  getFileS3 = async (key: string): Promise<CovidDataDep[] | CovidDataFr[]> => {
     const streamToJson = (stream): Promise<unknown> =>
       new Promise((resolve, reject): void => {
         const chunks = [];
@@ -33,6 +33,6 @@ export class S3Service {
     };
 
     const data = await s3client.send(new GetObjectCommand(bucketParams));
-    return (await streamToJson(data.Body)) as CovidData[];
+    return (await streamToJson(data.Body)) as CovidDataFr[] | CovidDataDep[];
   };
 }
