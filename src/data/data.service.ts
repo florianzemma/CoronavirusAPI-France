@@ -143,7 +143,7 @@ export class DataService {
       'covidDataDep.json',
     );
     const dataByDate: CovidData[] = covidDataListDEP.filter(
-      (data: CovidData) => data.date === format(new Date(date), 'yyyy-dd-MM'),
+      (data: CovidData) => data.date === helper.formatDate(date),
     );
     return dataByDate.length ? dataByDate : 'No data found';
   }
@@ -153,7 +153,7 @@ export class DataService {
       'covidDataFR.json',
     );
     const dataByDate: CovidData[] = covidDataListFR.filter(
-      (data: CovidData) => data.date === format(new Date(date), 'yyyy-dd-MM'),
+      (data: CovidData) => data.date === helper.formatDate(date),
     );
     return dataByDate.length ? dataByDate : 'No data found';
   }
@@ -169,7 +169,7 @@ export class DataService {
       (data: CovidData) =>
         helper.removeAccentAndLowercase(data.lib_dep) ===
           helper.removeAccentAndLowercase(name) &&
-        data.date === format(new Date(date), 'yyyy-dd-MM'),
+        data.date === helper.formatDate(date),
     );
     return dataByDepartment.length ? dataByDepartment : 'No data found';
   }
@@ -185,7 +185,7 @@ export class DataService {
       (data: CovidData) =>
         helper.removeAccentAndLowercase(data.lib_reg) ===
           helper.removeAccentAndLowercase(name) &&
-        data.date === format(new Date(date), 'yyyy-dd-MM'),
+        data.date === helper.formatDate(date),
     );
     return dataByRegion.length ? dataByRegion : 'No data found';
   }
