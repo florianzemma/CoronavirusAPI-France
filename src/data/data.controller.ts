@@ -1,21 +1,34 @@
 import { CovidData } from './interface';
 import { DataService } from './data.service';
-import { Controller, Get, Param } from '@nestjs/common';
+import {
+  CacheInterceptor,
+  CacheKey,
+  Controller,
+  Get,
+  Param,
+  UseInterceptors,
+} from '@nestjs/common';
 
 @Controller('data')
 export class DataController {
   constructor(private dataService: DataService) {}
 
+  @CacheKey('live/france')
+  @UseInterceptors(CacheInterceptor)
   @Get('live/france')
   async getLiveData(): Promise<Promise<CovidData[] | string>> {
     return await this.dataService.getLiveData();
   }
 
+  @CacheKey('live/departements')
+  @UseInterceptors(CacheInterceptor)
   @Get('live/departements')
   async getLiveDataByDep(): Promise<CovidData[] | string> {
     return this.dataService.getLiveDataForAllDepartement();
   }
 
+  @CacheKey('live/dep/name')
+  @UseInterceptors(CacheInterceptor)
   @Get('live/departement/:name')
   async getLiveDataByDepName(
     @Param('name') name: string,
@@ -23,6 +36,8 @@ export class DataController {
     return await this.dataService.getLiveDataByDepartementName(name);
   }
 
+  @CacheKey('live/reg/name')
+  @UseInterceptors(CacheInterceptor)
   @Get('live/region/:name')
   async getLiveDataByRegName(
     @Param('name') name: string,
@@ -44,6 +59,8 @@ export class DataController {
     return await this.dataService.getDataDepartementByDate(date);
   }
 
+  @CacheKey('dep/name')
+  @UseInterceptors(CacheInterceptor)
   @Get('departement/:name')
   async getDataForOneDep(
     @Param('name') name: string,
@@ -59,6 +76,8 @@ export class DataController {
     return await this.dataService.getDataByDepartementNameByDate(name, date);
   }
 
+  @CacheKey('reg/name')
+  @UseInterceptors(CacheInterceptor)
   @Get('region/:name')
   async getDataByRegName(
     @Param('name') name: string,
