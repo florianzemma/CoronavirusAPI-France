@@ -1,3 +1,5 @@
+!! THE API IS NOW CLOSED, IT WAS COSTING ME MONEY TO HOST AND KEEP LIVE IF YOU WANT YOU CAN FORK IT YOU WILL NEED AN S3 BUCKET !!
+
 # CoronavirusAPI-France
 API permettant de récupérer et d'exploiter les données sur le Coronavirus en France actualisées chaque jours a Minuit pour chaque départements et globalement pour la France entière via de simple requetes GET qui enverront une réponse en JSON.
 
